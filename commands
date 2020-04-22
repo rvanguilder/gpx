@@ -1,0 +1,4 @@
+# Bash command to run against MotionX GPS .gpx file
+
+xmlstarlet sel -N my=http://www.topografix.com/GPX/1/1 -t -m my:gpx -m my:trk -m my:trkseg -m my:trkpt -v @lat -o , -v @lon -o , -v my:ele -o , -v my:time -n Track_003.gpx | awk -f gps.awk | less
+
